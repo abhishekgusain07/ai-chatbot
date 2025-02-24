@@ -52,7 +52,7 @@ export async function POST(request: Request) {
     modelId,
   }: { id: string; messages: Array<Message>; modelId: string } =
     await request.json();
-
+    console.log("model Id received", modelId)
   const session = await auth();
 
   if (!session || !session.user || !session.user.id) {
